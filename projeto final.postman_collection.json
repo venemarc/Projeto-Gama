@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "5f4f82fe-e68f-4789-9443-045e30ce2daa",
+		"name": "projeto final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - all pdvs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pdvs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pdvs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - all status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - all Solicitacoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/solicitacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"solicitacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - solicitacoes por status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/solicitacoes?status=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"solicitacoes"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Criar Solicitacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeTecnico\":\"José\",\r\n    \"operadora\":\"jose@doe.com\",\r\n    \"telefone\":\"55 11 66666666\",\r\n    \"documento\":\"43856995425\",\r\n    \"data\":\"28-07-2020\",\r\n    \"hora\":\"21:00\",\r\n    \"pdv\":{\"id\":2},\r\n    \"status\":{\"id\":1}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/solicitacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"solicitacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - solicitacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/solicitacao/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"solicitacao",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - atualizar Status Solicitacao",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeTecnico\": \"José\",\r\n    \"operadora\": \"jose@doe.com\",\r\n    \"telefone\": \"55 11 66666666\",\r\n    \"documento\": \"43856995425\",\r\n    \"data\": \"28-07-2020\",\r\n    \"hora\": \"21:00\",\r\n    \"pdv\": {\r\n        \"id\": 1,\r\n        \"numeroPonto\": 0,\r\n        \"nome\": \"nome 0\",\r\n        \"endereco\": \"endereco 0\",\r\n        \"telefone\": \"telefone 0\"\r\n    },\r\n    \"status\": {\"id\":2}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/solicitacao/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"solicitacao",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login email senha ok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"teste1@email.com\",\r\n    \"senha\":\"senha1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login email senha not ok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"teste1@email.combatata\",\r\n    \"senha\":\"senha1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login racf senha ok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"racf\":\"racfxs2\",\r\n    \"senha\":\"senha2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
